@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get 'post_images/show'
   # 上記3つを以下に書き換え（2022/02/13）
   resources :post_images, only: [:new,:create,:index,:show,:destoroy]do
+  resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create,:destroy]
   end
   # get 'users/show'
